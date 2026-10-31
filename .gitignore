@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.pyc
+.ruff_cache/
+
+# 再生成できる出力。動画は YouTube、重みは Hugging Face にある
+artifacts/
+outputs/
+*.mp4
+*.mov
+*.safetensors
+*.pt
+
+.DS_Store
+
+# 説明資料、動画の原稿、測定値、事前予想はリポジトリの外に置く
+report/
+video/
+results/
+predictions.md

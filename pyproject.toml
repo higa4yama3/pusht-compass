@@ -1,0 +1,36 @@
+[project]
+name = "pusht-compass"
+version = "0.1.0"
+description = "Hand a pretrained PushT policy a goal-centered frame so it can push the T to any goal without retraining"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "gym-pusht==0.1.6",
+  "huggingface-hub>=1.6,<2",
+  "lerobot[diffusion,pusht]==0.6.1",
+  "numpy>=2.0,<2.3",
+  "pyyaml>=6.0,<7",
+  "safetensors>=0.5,<1",
+  "torch==2.11.0",
+  "torchvision==0.26.0",
+]
+
+[dependency-groups]
+dev = [
+  "ruff>=0.14,<0.15",
+]
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/compass"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B", "UP", "SIM", "RUF"]
